@@ -5,6 +5,11 @@ import Heading from './component/Heading'
 import './style.css'
 import Card from './component/Card'
 import ListCard from './component/ListCard'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import UserCampaign from './pages/UserCampagin'
+import CreateCampaign from './pages/CreateCampaign'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,9 +18,12 @@ function App() {
     <>
       <div className='container mx-auto px-4 md:px-0'>
         <Navbar />
-        <Heading />
-        <ListCard />
-        <h1>Halo</h1>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/userCampaign' element={<UserCampaign />} />
+          <Route path='/createCampaign' element={<CreateCampaign />} />
+        </Routes>
       </div>
     </>
   )
