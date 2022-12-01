@@ -12,3 +12,8 @@ nav img{
 .card .photo-card {
     height: 150px;
 }
+
+.add {
+    bottom: 30px;
+    right: 30px;
+}
