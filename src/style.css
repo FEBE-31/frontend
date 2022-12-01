@@ -17,3 +17,11 @@ nav img{
     bottom: 30px;
     right: 30px;
 }
+
+.icon-category{
+    height: 28px;
+}
+
+/* ::-webkit-scrollbar {
+    display: none;
+} */
