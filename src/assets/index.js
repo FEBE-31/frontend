@@ -4,6 +4,9 @@ import titleLogo from './titleLogo.svg'
 import dummyImage from './dummy-image.svg'
 import notFoundImage from './gambar-notfound.svg'
 import loginImage from './loginImage.svg'
+import iconHealth from './icon_health.png'
+import iconEducation from './icon_study.png'
+import iconModal from './icon_modalUsaha.png'
 
 export {
     iconUser, 
@@ -12,5 +15,7 @@ export {
     dummyImage,
     notFoundImage,
     loginImage,
-
+    iconHealth,
+    iconEducation,
+    iconModal,
 }
