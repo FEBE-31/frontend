@@ -13,7 +13,7 @@ const Navbar = () => {
                         <Link to='/' className='px-4 py-2 text-main-color hover:text-second-color font-semibold'>Home</Link>
                         <Link to='/userCampaign' className='px-4 py-2 text-main-color hover:text-second-color font-semibold'>Create Campaign</Link>
                         <Link to='/about' className='px-4 py-2 text-main-color hover:text-second-color font-semibold'>About</Link>
-                        <Link className='px-4 py-2 font-semibold bg-main-color hover:bg-second-color text-white rounded-lg'>Login</Link>
+                        <Link to='/login' className='px-4 py-2 font-semibold bg-main-color hover:bg-second-color text-white rounded-lg'>Login</Link>
                     </div>
                     <Link className='md:hidden lg:hidden'><img src={iconUser} alt="" /></Link>
                 </nav>

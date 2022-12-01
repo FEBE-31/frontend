@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import UserCampaign from './pages/UserCampagin'
 import CreateCampaign from './pages/CreateCampaign'
+import LoginPage from './pages/LoginPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +24,7 @@ function App() {
           <Route path='/about' element={<AboutPage />} />
           <Route path='/userCampaign' element={<UserCampaign />} />
           <Route path='/createCampaign' element={<CreateCampaign />} />
+          <Route path='/login' element={<LoginPage />} />
         </Routes>
       </div>
     </>
