@@ -37,7 +37,7 @@ const CreateCampaign = () => {
                             <InputText type="text" placeholder="input '-' if not disability" />
                             <label htmlFor="Deskripsi">Descriptions</label>
                             <textarea className="outline-none bg-slate-100 border border-slate-200 px-3 py-2 rounded-md" name="" id="" cols="40" rows="6" placeholder="input clear and honest descriptions"></textarea>
-                            <button className="w-full py-1 bg-succes-color text-white rounded-md hover:bg-green-700">Publish</button>
+                            <button type="submit" className="w-full py-1 bg-succes-color text-white rounded-md hover:bg-green-700">Publish</button>
                         </form>
                     </div>
                 </div>
