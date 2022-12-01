@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <>
             <header className=''>
-                <nav className='container mx-auto flex justify-between items-center h-16 px-4 md:px-0'>
+                <nav className='container mx-auto flex justify-between items-center h-16'>
                     <Link><img src={logoAyoBantu} alt="logo Ayo Bantu" />
                     </Link>
                     <div className='md:flex gap-3 hidden'>

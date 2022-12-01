@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      width: {
+        '25': '24%',
+      },
       screens: {
         '2xl': '1420px',
       },

@@ -2,8 +2,13 @@
 
 body{
     font-family: 'Poppins',sans-serif;
+    color: #232323;
 }
 
 nav img{
     height: 40px;
+}
+
+.card .photo-card {
+    height: 150px;
 }
