@@ -1,11 +1,17 @@
 import React from "react";
 
-function Checkbox({ name }) {
+function Checkbox({ title, name, id, value, onchange }) {
   return (
     <>
       <div className="flex gap-2">
-        <input type="checkbox" name="" id="" />
-        <label htmlFor="">{name}</label>
+        <input
+          type="checkbox"
+          name={name}
+          id={id}
+          value={value}
+          onChange={onchange}
+        />
+        <label htmlFor="">{title}</label>
       </div>
     </>
   );

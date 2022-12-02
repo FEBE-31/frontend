@@ -1,7 +1,6 @@
 import React from "react";
 
 import InputText from "../component/InputText";
-import Checkbox from "../component/Checkbox";
 import Button from "../component/Button";
 
 import banner from "../assets/bannerDaftar.png";
@@ -13,6 +12,7 @@ function RegisterPage() {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
+
     setUsers((values) => ({ ...values, [name]: value }));
   };
 
@@ -21,8 +21,6 @@ function RegisterPage() {
 
     console.log("Anda sudah submit");
     console.log(users);
-
-    reset();
   };
 
   return (
@@ -33,76 +31,67 @@ function RegisterPage() {
           Daftar
         </p>
 
-        <div className="flex gap-5 mb-3">
-          <Checkbox name={"Partner/Donatur"} />
-          <Checkbox name={"Penggalang Dana"} />
-        </div>
-
         <form action="" onSubmit={submitForm} method="post">
           <div className="flex flex-col lg:flex-row gap-5 justify-between">
             <div className="basis-1/2">
               <div className="flex flex-col gap-5">
                 <InputText
-                  title={"Nama"}
-                  name={"nama"}
+                  title={"Name"}
+                  name={"name"}
                   type={"text"}
                   id={"nama"}
-                  placeholder={"masukkan nama lengkap"}
+                  placeholder={"input your name"}
                   value={users.nama || ""}
                   onChange={handleChange}
                 />
+
                 <InputText
-                  title={"Tanggal Lahir"}
-                  name={"ttl"}
+                  title={"Date of Birth"}
+                  name={"DateofBirth"}
                   type={"date"}
                   id={"ttl"}
-                  placeholder={"masukkan tanggal lahir"}
-                  value={users.ttl || ""}
+                  placeholder={"input date of birth"}
+                  value={users.DateofBirth || ""}
                   onChange={handleChange}
                 />
+
                 <InputText
-                  name={"telp"}
-                  title={"No Telepon"}
+                  title={"National ID"}
+                  name={"nationalId"}
                   type={"text"}
-                  id={"telp"}
-                  placeholder={"masukkan nomor telepon"}
-                  value={users.telp || ""}
+                  id={"nationalid"}
+                  placeholder={"input your national id"}
+                  value={users.nationalId || ""}
                   onChange={handleChange}
                 />
+
                 <InputText
-                  name={"email"}
-                  title={"Email"}
-                  type={"email"}
-                  id={"email"}
-                  placeholder={"masukkan email"}
-                  value={users.email || ""}
-                  onChange={handleChange}
-                />
-                <InputText
-                  name={"alamat"}
-                  title={"Alamat"}
+                  name={"contact"}
+                  title={"Contact"}
                   type={"text"}
-                  id={"alamat"}
-                  placeholder={"masukkan alamat"}
-                  value={users.alamat || ""}
+                  id={"contact"}
+                  placeholder={"input your phone number"}
+                  value={users.contact || ""}
                   onChange={handleChange}
                 />
+
                 <InputText
-                  name={"username"}
-                  title={"Username"}
+                  name={"address"}
+                  title={"Address"}
                   type={"text"}
-                  id={"username"}
-                  placeholder={"masukkan username"}
-                  value={users.username || ""}
+                  id={"address"}
+                  placeholder={"input your address"}
+                  value={users.address || ""}
                   onChange={handleChange}
                 />
+
                 <InputText
-                  name={"password"}
-                  title={"Password"}
-                  type={"password"}
-                  id={"password"}
-                  placeholder={"masukkan password"}
-                  value={users.password || ""}
+                  name={"profile"}
+                  title={"Foto Profile"}
+                  type={"file"}
+                  id={"profile"}
+                  placeholder={"upload your photo"}
+                  value={users.profile || ""}
                   onChange={handleChange}
                 />
               </div>
@@ -111,19 +100,54 @@ function RegisterPage() {
             <div className="lg:relative basis-1/4">
               <div className="flex flex-col gap-3 mb-5">
                 <InputText
-                  name={"Berkas 1"}
-                  type={"text"}
-                  placeholder={"masukkan data"}
+                  name={"email"}
+                  title={"Email"}
+                  type={"email"}
+                  id={"email"}
+                  placeholder={"input your email"}
+                  value={users.email || ""}
+                  onChange={handleChange}
                 />
-                <Button name="Upload Berkas" bgcolor="bg-sky-600" />
-              </div>
-              <div className="flex flex-col gap-3">
+
                 <InputText
-                  name={"Berkas 1"}
+                  name={"username"}
+                  title={"Username"}
                   type={"text"}
-                  placeholder={"masukkan data"}
+                  id={"username"}
+                  placeholder={"input username"}
+                  value={users.username || ""}
+                  onChange={handleChange}
                 />
-                <Button name="Upload Berkas" bgcolor="bg-sky-600" />
+
+                <InputText
+                  name={"password"}
+                  title={"Password"}
+                  type={"password"}
+                  id={"password"}
+                  placeholder={"input your password"}
+                  value={users.password || ""}
+                  onChange={handleChange}
+                />
+
+                {/* <InputText
+                  name={"supportingFile1"}
+                  title={"Supporting File 1"}
+                  type={"file"}
+                  id={"supportingFile1"}
+                  placeholder={"upload your photo"}
+                  value={users.supportingFile1 || ""}
+                  onChange={handleChange}
+                />
+
+                <InputText
+                  name={"supportingFile2"}
+                  title={"Supporting File 2"}
+                  type={"file"}
+                  id={"supportingFile2"}
+                  placeholder={"upload your photo"}
+                  value={users.supportingFile2 || ""}
+                  onChange={handleChange}
+                /> */}
               </div>
               <div className="lg:absolute lg:bottom-0 w-full my-5 lg:my-0">
                 <Button name="Register" bgcolor="bg-teal-600" />
