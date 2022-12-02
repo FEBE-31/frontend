@@ -11,6 +11,7 @@ import AboutPage from './pages/AboutPage'
 import UserCampaign from './pages/UserCampagin'
 import CreateCampaign from './pages/CreateCampaign'
 import LoginPage from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,6 +26,7 @@ function App() {
           <Route path='/userCampaign' element={<UserCampaign />} />
           <Route path='/createCampaign' element={<CreateCampaign />} />
           <Route path='/login' element={<LoginPage />} />
+          <Route path='/register' element={<RegisterPage />} />
         </Routes>
       </div>
     </>
