@@ -13,6 +13,7 @@ module.exports = {
         '2xl': '1420px',
       },
       colors: {
+        'orens-color': '#F18700',
         'main-color': '#2464AB',
         'second-color': '#3DA5DA',
         'alert-color':'#AB2424',
