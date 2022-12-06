@@ -7,6 +7,8 @@ import loginImage from './loginImage.svg'
 import iconHealth from './icon_health.png'
 import iconEducation from './icon_study.png'
 import iconModal from './icon_modalUsaha.png'
+import product from './product.png'
+import tumbnail from './tumbnail.png'
 
 export {
     iconUser, 
@@ -18,4 +20,6 @@ export {
     iconHealth,
     iconEducation,
     iconModal,
+    product,
+    tumbnail,
 }
