@@ -1,6 +1,6 @@
 import React from "react";
 
-function InputText({ title, type, placeholder, id, name, onChange }) {
+function InputText({ title, type, placeholder, id, name, onChange, value }) {
   return (
     <>
       <div className="flex flex-col gap-2">
@@ -10,6 +10,7 @@ function InputText({ title, type, placeholder, id, name, onChange }) {
           type={type}
           name={name}
           id={id}
+          value={value}
           placeholder={placeholder}
           onChange={onChange}
         />

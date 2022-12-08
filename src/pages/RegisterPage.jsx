@@ -6,8 +6,13 @@ import Button from "../component/Button";
 import banner from "../assets/bannerDaftar.png";
 import { useState } from "react";
 
+import { register } from "../app/actions/register";
+import { useDispatch } from "react-redux";
+
 function RegisterPage() {
   const [users, setUsers] = useState({});
+
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -18,6 +23,8 @@ function RegisterPage() {
 
   const submitForm = (evt) => {
     evt.preventDefault();
+
+    dispatch(register(users.username, users.password));
 
     console.log("Anda sudah submit");
     console.log(users);
