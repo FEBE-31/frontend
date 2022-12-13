@@ -37,16 +37,17 @@ export function login(username, password) {
       .catch((error) => {
         // Jika login gagal, hapus token yang ada di local storage
         // localStorage.removeItem("token", response.data.accessToken);
-        dispatch({
-          type: LOGIN_FAILURE,
-          error: "login gagal!",
-        });
 
         swal({
           title: "Login Failed!",
           text: `Ooopsss.. something went wrong. Username and Password is Incorrect!`,
           icon: "error",
           dangerMode: true,
+        });
+
+        dispatch({
+          type: LOGIN_FAILURE,
+          error: "login gagal!",
         });
 
         console.log(error.response.data);

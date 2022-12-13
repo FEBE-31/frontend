@@ -8,43 +8,21 @@ const ListCard = () => {
   const [data, setdata] = useState([]);
 
   useEffect(() => {
-    getData().then((res) => {
-      localStorage.setItem("datas", JSON.stringify(res));
-      setdata(res);
-    });
+    getData()
+      .then((res) => {
+        localStorage.setItem("datas", JSON.stringify(res));
+        setdata(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   const getdb = localStorage.getItem("datas");
   const obj = JSON.parse(getdb);
 
+  console.log(data);
   // console.log(obj.image);
-
-  // console.log(data.length);
-
-  // data.forEach((datas) => {
-  //   for (let data in datas) {
-  //     console.log("data :", datas[data]);
-  //   }
-  // });
-
-  // console.log(data.category);
-
-  // const Campaign = () => {
-  //   return data ? (
-  //     data.data.map((items, idx) => (
-  //       <div key={idx}>
-  //         <p>{items.title}</p>
-  //         <p>{items.desc}</p>
-  //       </div>
-  //     ))
-  //   ) : (
-  //     <div className="text-neutral-500">
-  //       <p>Still loading.......</p>
-  //     </div>
-  //   );
-  // };
-
-  // console.log(data[0].category);
 
   return (
     <>
@@ -78,15 +56,21 @@ const ListCard = () => {
       </div>
 
       <div className="flex flex-col md:flex-row w-full flex-wrap">
-        {data.map((items) => (
-          <div key={items._id} className="w-full md:w-25">
-            <Card
-              title={items.title}
-              category={items.category}
-              description={items.description}
-            />
-          </div>
-        ))}
+        {data.length < 1 ? (
+          <p>Data Kosong!</p>
+        ) : (
+          data.map((items) => (
+            <div key={items._id} className="w-full md:w-25">
+              <Card
+                title={items.title}
+                category={items.category}
+                description={items.description}
+              />
+            </div>
+          ))
+        )}
+
+        {/* {data.length < 1 ? <p>data null</p> : <p>data ada</p>} */}
 
         {/* {data && data[0].map((items) => console.log(items.title))} */}
         {/* <Campaign /> */}
