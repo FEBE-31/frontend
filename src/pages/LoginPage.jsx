@@ -25,7 +25,7 @@ const LoginPage = () => {
       console.log(error);
     }
 
-    console.log(selector.login.token);
+    console.log(!selector.login.token);
     console.log(selector.login);
 
     console.log("Username : ", username);
