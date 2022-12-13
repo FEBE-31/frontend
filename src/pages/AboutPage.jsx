@@ -12,6 +12,7 @@ const AboutPage = () => {
                         Through Ayo Bantu! aid providers don't have to worry about their aid falling into the wrong hands, because Ayo Bantu! will collect aid recipients and validate the data, so that it is expected to produce valid data.</p>
                 </div>
             </div>
+
             <div className=" flex flex-col-reverse md:flex-row md:justify-between items-center pb-28 gap-5">
                 <div className="p-4">
                     <h2 className="text-xl font-semibold mb-8 text-main-color">Goals to be achieved</h2>

@@ -4,6 +4,8 @@ import { useState } from "react";
 const Card = ({ category, title, description }) => {
   const [show, setShow] = useState(false);
 
+  const role = 'admin'
+
   const ToggleData = () => {
     setShow(!show);
   };
@@ -45,12 +47,40 @@ const Card = ({ category, title, description }) => {
           <h2 className="mb-2 font-semibold">{title}</h2>
           <p className="text-sm">{description}</p>
           <div className="text-sm mt-4">
+            {role == 'admin' ? 
+            <div>
+                <p onClick={ToggleData} className='mb-3 hover:text-orens-color inline-block'>view more</p>
+                <div className="flex gap-2 justify-between">
+                  <button
+                    // onClick={}
+                    className="w-1/2 py-1 bg-succes-color hover:bg-green-500 rounded-md text-white"
+                  >
+                    Accept
+                  </button> 
+                  <button
+                    // onClick={}
+                    className="w-1/2 py-1 bg-alert-color hover:bg-red-500 rounded-md text-white"
+                  >
+                    Reject
+                  </button>
+                </div>
+            </div>
+            
+            : 
             <button
               onClick={ToggleData}
               className="w-1/2 py-1 bg-stone-300 hover:bg-stone-200 rounded-md"
             >
               {!show ? "View more" : "View less"}
             </button>
+
+            }
+            {/* <button
+              onClick={ToggleData}
+              className="w-1/2 py-1 bg-stone-300 hover:bg-stone-200 rounded-md"
+            >
+              {!show ? "View more" : "View less"}
+            </button> */}
           </div>
         </div>
       )}
