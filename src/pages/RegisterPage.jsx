@@ -10,24 +10,60 @@ import { register } from "../app/actions/register";
 import { useDispatch } from "react-redux";
 
 function RegisterPage() {
-  const [users, setUsers] = useState({});
+  // const [users, setUsers] = useState({});
+
+  const [name, setName] = useState();
+  const [dob, setDob] = useState();
+  const [address, setAddress] = useState();
+  const [national_id, setNationalId] = useState();
+  const [contact, setContact] = useState();
+  const [username, setUsername] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [photo, setPhoto] = useState();
 
   const dispatch = useDispatch();
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-
-    setUsers((values) => ({ ...values, [name]: value }));
-  };
 
   const submitForm = (evt) => {
     evt.preventDefault();
 
-    dispatch(register(users.username, users.password));
+    try {
+      dispatch(
+        register(
+          name,
+          dob,
+          address,
+          national_id,
+          contact,
+          username,
+          email,
+          password,
+          photo
+        )
+      );
+    } catch (error) {
+      console.log(error);
+    }
 
     console.log("Anda sudah submit");
-    console.log(users);
+    console.log({
+      datas: {
+        nama: name,
+        dob: dob,
+        address: address,
+        national_id: national_id,
+        contact: contact,
+        username: username,
+        email: email,
+        password: password,
+        photo: photo,
+      },
+    });
+
+    setTimeout(() => {
+      setName("");
+      console.log(name);
+    }, 3000);
   };
 
   return (
@@ -48,28 +84,28 @@ function RegisterPage() {
                   type={"text"}
                   id={"nama"}
                   placeholder={"input your name"}
-                  value={users.nama || ""}
-                  onChange={handleChange}
+                  value={name || ""}
+                  onChange={(event) => setName(event.target.value)}
                 />
 
                 <InputText
                   title={"Date of Birth"}
-                  name={"DateofBirth"}
+                  name={"dob"}
                   type={"date"}
                   id={"ttl"}
                   placeholder={"input date of birth"}
-                  value={users.DateofBirth || ""}
-                  onChange={handleChange}
+                  value={dob || ""}
+                  onChange={(event) => setDob(event.target.value)}
                 />
 
                 <InputText
                   title={"National ID"}
-                  name={"nationalId"}
+                  name={"national_id"}
                   type={"text"}
-                  id={"nationalid"}
+                  id={"national_id"}
                   placeholder={"input your national id"}
-                  value={users.nationalId || ""}
-                  onChange={handleChange}
+                  value={national_id || ""}
+                  onChange={(event) => setNationalId(event.target.value)}
                 />
 
                 <InputText
@@ -78,8 +114,8 @@ function RegisterPage() {
                   type={"text"}
                   id={"contact"}
                   placeholder={"input your phone number"}
-                  value={users.contact || ""}
-                  onChange={handleChange}
+                  value={contact || ""}
+                  onChange={(event) => setContact(event.target.value)}
                 />
 
                 <InputText
@@ -88,18 +124,18 @@ function RegisterPage() {
                   type={"text"}
                   id={"address"}
                   placeholder={"input your address"}
-                  value={users.address || ""}
-                  onChange={handleChange}
+                  value={address || ""}
+                  onChange={(event) => setAddress(event.target.value)}
                 />
 
                 <InputText
-                  name={"profile"}
+                  name={"photo"}
                   title={"Foto Profile"}
                   type={"file"}
                   id={"profile"}
                   placeholder={"upload your photo"}
-                  value={users.profile || ""}
-                  onChange={handleChange}
+                  value={photo || ""}
+                  onChange={(event) => setPhoto(event.target.value)}
                 />
               </div>
             </div>
@@ -112,8 +148,8 @@ function RegisterPage() {
                   type={"email"}
                   id={"email"}
                   placeholder={"input your email"}
-                  value={users.email || ""}
-                  onChange={handleChange}
+                  value={email || ""}
+                  onChange={(event) => setEmail(event.target.value)}
                 />
 
                 <InputText
@@ -122,8 +158,8 @@ function RegisterPage() {
                   type={"text"}
                   id={"username"}
                   placeholder={"input username"}
-                  value={users.username || ""}
-                  onChange={handleChange}
+                  value={username || ""}
+                  onChange={(event) => setUsername(event.target.value)}
                 />
 
                 <InputText
@@ -132,8 +168,8 @@ function RegisterPage() {
                   type={"password"}
                   id={"password"}
                   placeholder={"input your password"}
-                  value={users.password || ""}
-                  onChange={handleChange}
+                  value={password || ""}
+                  onChange={(event) => setPassword(event.target.value)}
                 />
 
                 {/* <InputText
