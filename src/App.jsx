@@ -10,20 +10,8 @@ import UserCampaign from "./pages/UserCampagin";
 import CreateCampaign from "./pages/CreateCampaign";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-import { useState, useEffect } from "react";
-import { getData } from "./api";
 
 function App() {
-  const [data, setdata] = useState();
-
-  useEffect(() => {
-    getData().then((res) => {
-      setdata(res);
-    });
-
-    console.log(data);
-  }, []);
-
   return (
     <>
       <div className="container mx-auto px-4 md:px-0">
