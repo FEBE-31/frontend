@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from 'axios'
 
-export const CAMPAIGN_REQUEST = "CAMPAIGN_REQUEST";
-export const CAMPAIGN_SUCCESS = "CAMPAIGN_SUCCESS";
-export const CAMPAIGN_FAILURE = "CAMPAIGN_FAILURE";
+export const CAMPAIGN_REQUEST = 'CAMPAIGN_REQUEST'
+export const CAMPAIGN_SUCCESS = 'CAMPAIGN_SUCCESS'
+export const CAMPAIGN_FAILURE = 'CAMPAIGN_FAILURE'
 
 export function createCampaign(
   user,
@@ -68,7 +68,7 @@ export function createCampaign(
           error: "gagal post!",
         });
 
-        console.log(error.response.data);
-      });
-  };
+                console.log(error.response.data)
+            })
+    }
 }

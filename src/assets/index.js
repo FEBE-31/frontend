@@ -11,7 +11,7 @@ import product from './product.png'
 import tumbnail from './tumbnail.png'
 
 export {
-    iconUser, 
+    iconUser,
     logoAyoBantu,
     titleLogo,
     dummyImage,
