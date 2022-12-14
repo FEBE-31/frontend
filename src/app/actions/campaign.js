@@ -4,40 +4,68 @@ export const CAMPAIGN_REQUEST = "CAMPAIGN_REQUEST";
 export const CAMPAIGN_SUCCESS = "CAMPAIGN_SUCCESS";
 export const CAMPAIGN_FAILURE = "CAMPAIGN_FAILURE";
 
-export function campaign(username, password) {
+export function createCampaign(
+  user,
+  title,
+  address,
+  description,
+  image,
+  supportingFile1,
+  supportingFile2,
+  category
+) {
   return (dispatch) => {
-    dispatch({ type: LOGIN_REQUEST });
+    dispatch({ type: CAMPAIGN_REQUEST });
 
     axios
       .post(
-        "https://restful-api-ayobantu-production.up.railway.app/auth/login",
-        { username, password }
+        "https://restful-api-ayobantu-production.up.railway.app/campaign",
+        {
+          user,
+          title,
+          address,
+          description,
+          image,
+          supportingFile1,
+          supportingFile2,
+          category,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
       )
       .then((response) => {
         // Jika login berhasil, simpan token di local storage
-        localStorage.setItem("token", response.data.accessToken);
+
+        localStorage.setItem(
+          "dataCampaign",
+          JSON.stringify(response.data.data)
+        );
+
         dispatch({
-          type: LOGIN_SUCCESS,
-          token: response.data.accessToken,
+          type: CAMPAIGN_SUCCESS,
+          msg: response.data.message,
+          id: response.data.data._id,
         });
 
-        swal({
-          title: "Successfully Login!",
-          text: "Login Success",
-          icon: "success",
-          button: "Hooraaay!",
-        });
+        // swal({
+        //   title: "Successfully Login!",
+        //   text: "Login Success",
+        //   icon: "success",
+        //   button: "Hooraaay!",
+        // });
 
         console.log(response.data);
-        // console.log(response.data);
-        // return response.data;
       })
       .catch((error) => {
         // Jika login gagal, hapus token yang ada di local storage
-        // localStorage.removeItem("token", response.data.accessToken);
+        // localStorage.removeItem("token", response.data.data);
+
         dispatch({
-          type: LOGIN_FAILURE,
-          error: "login gagal!",
+          type: CAMPAIGN_FAILURE,
+          error: "gagal post!",
         });
 
         console.log(error.response.data);

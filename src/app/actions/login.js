@@ -1,4 +1,5 @@
 import axios from "axios";
+import swal from "sweetalert";
 
 export const LOGIN_REQUEST = "LOGIN_REQUEST";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
@@ -60,7 +61,7 @@ export function logout() {
   return (dispatch, res) => {
     localStorage.removeItem("token", res.accessToken);
 
-    console.log(res);
+    // console.log(res);
 
     dispatch({
       type: LOGOUT,

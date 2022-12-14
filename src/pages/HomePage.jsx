@@ -3,10 +3,12 @@ import Heading from "../component/Heading";
 import ListCard from "../component/ListCard";
 
 const HomePage = () => {
+  const selector = useSelector((state) => state);
+
   return (
     <>
       <Heading />
-      <ListCard />
+      {/* <ListCard /> */}
     </>
   );
 };

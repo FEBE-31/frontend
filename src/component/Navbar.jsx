@@ -35,7 +35,8 @@ const Navbar = () => {
       setToggle(true);
     }
     // akses ? setToggle(true) : setToggle(false);
-    console.log(akses);
+
+    // console.log(akses);
   }, [akses]);
 
   // console.log(toggle);
