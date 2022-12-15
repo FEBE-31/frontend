@@ -30,8 +30,10 @@ const Navbar = () => {
 
     const ToggleData = () => {
         setShow(!show)
+
         console.log('tertekan')
     }
+    console.log(show)
 
     // console.log(toggle ? "tampil btn logout" : "tampil btn login");
 
@@ -98,7 +100,7 @@ const Navbar = () => {
                 {!show ? (
                     ''
                 ) : (
-                    <div className='flex flex-col gap-3 bg-white p-3 animate__animated animate__slideInDown z-0'>
+                    <div className='flex flex-col gap-3 bg-white p-3 animate__slow animate__animated animate__slideInDown z-0'>
                         <Link
                             to='/'
                             className='px-4 py-2 text-main-color hover:text-second-color font-semibold'
